@@ -1,0 +1,21 @@
+class Solution {
+    public int findNumbers(int[] nums) {
+        int evenDigitNumbers = 0;
+        for (int num: nums) {
+            int noOfDigits = calculateNumberOfDigits(num);
+            if(noOfDigits % 2 == 0) 
+                evenDigitNumbers++;
+        }
+
+        return evenDigitNumbers;
+    }
+
+    private int calculateNumberOfDigits(int num) {
+        int count = 0;
+        while (num > 0) {
+            count ++;
+            num /= 10;
+        }
+        return count;
+    }
+}
